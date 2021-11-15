@@ -73,6 +73,10 @@ app.post('/user', (req, res) => {
         newUser.save().then(() => {
             console.log("user created successfully!!")
             res.send("users created!!")
+        })
+        .catch((error)=>{
+            console.log(error.message)
+            res.status(500).send("error in database")
         });
     }
 })
