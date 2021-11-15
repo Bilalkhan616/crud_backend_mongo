@@ -79,9 +79,6 @@ app.post('/user', (req, res) => {
             console.log(error.message)
             res.status(500).send("error in database")
         });
-            .catch((error)=>{
-            console.log(error.message)
-        }
     }
 })
 
