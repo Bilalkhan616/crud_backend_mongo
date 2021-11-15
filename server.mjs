@@ -70,7 +70,8 @@ app.post('/user', (req, res) => {
             email: req.body.email,
             password: req.body.password
         });
-        newUser.save().then(() => {
+        newUser.save()
+            .then(() => {
             console.log("user created successfully!!")
             res.send("users created!!")
         })
@@ -78,6 +79,9 @@ app.post('/user', (req, res) => {
             console.log(error.message)
             res.status(500).send("error in database")
         });
+            .catch((error)=>{
+            console.log(error.message)
+        }
     }
 })
 
