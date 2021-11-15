@@ -110,7 +110,7 @@ app.put('/users/:id', (req, res) => {
 // will delete user data from the given id
 
 app.post('/user/delete', (req, res) => {
-    User.findByIdAndRemove(req.body.id, (err, data) => {
+    User.findByIdAndRemove(req.body._id, (err, data) => {
         if (!err) {
             res.send("user deleted successfully!")
 
