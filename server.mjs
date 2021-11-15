@@ -28,6 +28,10 @@ app.use((req, res, next) => {
     next();
 })
 
+app.get('/', (req, res) => {
+    res.send("Welcome to the server back end")
+})
+
 //will send all user data
 
 app.get('/users', (req, res) => {
@@ -104,8 +108,11 @@ app.post('/user/delete', (req, res) => {
     User.findByIdAndRemove(req.body.id, (err, data) => {
         if (!err) {
             res.send("user deleted successfully!")
-        } else {
+
+        }
+        else {
             res.status(500).send("error occurred!")
+
         }
     })
 
